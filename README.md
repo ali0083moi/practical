@@ -96,7 +96,38 @@ tracey ./performance_test
 
 ## تمرین ۳: بهینه‌سازی برنامه
 
-بعد از شناسایی بخش‌های نابهینه با FlameGraph، برنامه را بهینه کنید و دوباره تحلیل کنید.
+بعد از شناسایی بخش‌های نابهینه با FlameGraph، برنامه بهینه‌شده در فایل `performance_test_optimized.cpp` آماده است.
+
+### اجرای نسخه بهینه‌شده و تولید FlameGraph:
+
+```bash
+# اجرای تحلیل perf روی نسخه بهینه‌شده
+chmod +x run_perf_optimized.sh
+./run_perf_optimized.sh
+
+# تولید FlameGraph از نسخه بهینه‌شده
+chmod +x generate_flamegraph_optimized.sh
+./generate_flamegraph_optimized.sh
+```
+
+### مقایسه نتایج:
+
+برای مقایسه زمان اجرا:
+```bash
+# اجرای نسخه نابهینه
+time ./performance_test
+
+# اجرای نسخه بهینه‌شده
+time ./performance_test_optimized
+```
+
+### تغییرات اعمال شده:
+
+1. **فاکتوریل**: از بازگشتی به iterative با cache تبدیل شد
+2. **جستجو**: از خطی به دودویی (بعد از مرتب‌سازی) تبدیل شد
+3. **مرتب‌سازی**: از bubble sort به std::sort تبدیل شد
+4. **محاسبات ریاضی**: پیش‌محاسبه مقادیر sin/cos
+5. **کپی‌ها**: حذف کپی‌های غیرضروری با استفاده از reference
 
 ## نکات مهم
 

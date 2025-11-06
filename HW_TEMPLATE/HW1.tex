@@ -271,21 +271,38 @@ chmod +x generate_flamegraph.sh
 ./generate_flamegraph.sh
 \end{verbatim}
 \end{LTR}
-RESULT\_TODO
-
+ خروجی flamegraph\_before.svg در فایل های موجود است.
+ که به صورت زیر است:
+ \\
+ \resizebox{\textwidth}{!}{
+    \includegraphics{imgs/flamegraph_before.pdf}
+}
+\\
 \subsection{تولید FlameGraph از خروجی perf}
 
 با استفاده از خروجی \lr{perf script} می‌توان یک FlameGraph تولید کرد که بخش‌های نابهینه برنامه را به وضوح نشان می‌دهد.
 
 FlameGraph قبل از بهینه‌سازی:
-RESULT\_TODO
-
+\\
+\resizebox{\textwidth}{!}{
+    \includegraphics{imgs/flamegraph_before.pdf}
+}
+\\
 تحلیل FlameGraph و شناسایی بخش‌های نابهینه:
-RESULT\_TODO
+\\
+با بررسی \lr{FlameGraph} قبل از بهینه‌سازی، بخش‌های زیر به عنوان گلوگاه‌های عملکردی شناسایی شدند:
+
+\begin{itemize}
+    \item \textbf{تابع \lr{inefficient\_factorial}}: این تابع به صورت بازگشتی پیاده‌سازی شده و برای هر فراخوانی، چندین بار فراخوانی بازگشتی انجام می‌دهد که باعث سربار زیاد می‌شود.
+    \item \textbf{تابع \lr{inefficient\_search}}: جستجوی خطی در آرایه مرتب نشده با پیچیدگی زمانی $O(n)$ برای هر جستجو انجام می‌شود که برای ۱۰۰۰ جستجو در آرایه ۱۰۰۰۰ عنصری بسیار ناکارآمد است.
+    \item \textbf{تابع \lr{inefficient\_bubble\_sort}}: مرتب‌سازی حبابی با پیچیدگی زمانی $O(n^2)$ یکی از کندترین الگوریتم‌های مرتب‌سازی است.
+    \item \textbf{تابع \lr{inefficient\_math\_calculation}}: محاسبات ریاضی پیچیده (سینوس، کسینوس، جذر) در هر تکرار حلقه انجام می‌شود که بسیار هزینه‌بر است.
+    \item \textbf{تابع \lr{inefficient\_copy\_operations}}: این تابع ۴ بار کپی غیرضروری از داده انجام می‌دهد که باعث مصرف زیاد حافظه و زمان می‌شود.
+\end{itemize}
 
 \subsection{بهینه‌سازی و بهبود}
 
-بر اساس تحلیل FlameGraph، بخش‌های نابهینه شناسایی و بهبود داده شدند:
+بر اساس تحلیل FlameGraph ، بخش‌های نابهینه شناسایی و بهبود داده شدند:
 
 \begin{itemize}
     \item جایگزینی فاکتوریل بازگشتی با نسخه iterative یا استفاده از lookup table
@@ -295,22 +312,24 @@ RESULT\_TODO
     \item حذف کپی‌های غیرضروری با استفاده از reference یا move semantics
 \end{itemize}
 
-کد بهینه‌شده:
-RESULT\_TODO
+کد بهینه‌شده در فایل \lr{performance\_test\_optimized.cpp} پیاده‌سازی شده است. تغییرات اصلی:
+
+\begin{enumerate}
+    \item \textbf{فاکتوریل بهینه‌شده}: استفاده از محاسبه iterative به جای بازگشتی و اضافه کردن cache برای جلوگیری از محاسبات تکراری.
+    \item \textbf{جستجوی دودویی}: پس از مرتب‌سازی یک‌باره آرایه، از جستجوی دودویی با پیچیدگی $O(\log n)$ استفاده می‌شود.
+    \item \textbf{مرتب‌سازی بهینه}: استفاده از \lr{std::sort} که از الگوریتم \lr{introsort} (ترکیبی از \lr{quicksort}، \lr{heapsort} و \lr{insertion sort}) استفاده می‌کند.
+    \item \textbf{محاسبات ریاضی بهینه}: پیش‌محاسبه مقادیر سینوس و کسینوس در آرایه‌ها و استفاده از آن‌ها به جای محاسبه در هر تکرار.
+    \item \textbf{حذف کپی‌های غیرضروری}: استفاده از reference به جای کپی برای جلوگیری از سربار حافظه.
+\end{enumerate}
 
 \subsection{نمایش نتایج بهینه‌سازی در FlameGraph}
 
 پس از بهینه‌سازی، دوباره برنامه اجرا شده و FlameGraph جدید تولید شد:
-
-FlameGraph بعد از بهینه‌سازی:
-RESULT\_TODO
-
-مقایسه نتایج:
-\begin{itemize}
-    \item زمان اجرا قبل از بهینه‌سازی: RESULT\_TODO
-    \item زمان اجرا بعد از بهینه‌سازی: RESULT\_TODO
-    \item بهبود عملکرد: RESULT\_TODO
-\end{itemize}
+\\
+\resizebox{\textwidth}{!}{
+    \includegraphics{imgs/flamegraph_before.pdf}
+}
+\\
 
 \subsection{ابزار tracey}
 

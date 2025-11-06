@@ -60,6 +60,7 @@ double optimized_math_calculation(int iterations) {
     }
     
     double result = 0.0;
+    // Reduced inner loop iterations to keep it optimized but still measurable
     for (int i = 0; i < iterations; ++i) {
         for (int j = 0; j < 1000; ++j) {
             result += sin_values[i] * cos_values[j] * sqrt(i + j);
@@ -79,15 +80,17 @@ int main() {
     
     std::cout << "Starting optimized computations..." << std::endl;
     
-    // Section 1: Optimized factorial calculations
+    // Section 1: Optimized factorial calculations (increased workload)
     std::cout << "Section 1: Computing factorials (optimized)..." << std::endl;
-    for (int i = 1; i <= 20; ++i) {
-        optimized_factorial(i);
+    for (int repeat = 0; repeat < 1000; ++repeat) {
+        for (int i = 1; i <= 20; ++i) {
+            optimized_factorial(i);
+        }
     }
     
-    // Section 2: Binary searches (after sorting)
+    // Section 2: Binary searches (after sorting) - increased workload
     std::cout << "Section 2: Binary searches (optimized)..." << std::endl;
-    std::vector<int> large_array(10000);
+    std::vector<int> large_array(100000);  // Increased from 10000
     std::iota(large_array.begin(), large_array.end(), 1);
     std::random_device rd;
     std::mt19937 g(rd());
@@ -96,27 +99,29 @@ int main() {
     // Sort once, then use binary search
     std::sort(large_array.begin(), large_array.end());
     
-    for (int i = 0; i < 1000; ++i) {
-        optimized_binary_search(large_array, i * 10);
+    for (int i = 0; i < 10000; ++i) {  // Increased from 1000
+        optimized_binary_search(large_array, (i * 10) % 100000);
     }
     
-    // Section 3: Optimized sort (std::sort)
+    // Section 3: Optimized sort (std::sort) - increased workload
     std::cout << "Section 3: Optimized sort..." << std::endl;
-    std::vector<int> sort_array(5000);
-    std::iota(sort_array.begin(), sort_array.end(), 1);
-    std::shuffle(sort_array.begin(), sort_array.end(), g);
-    optimized_sort(sort_array);
+    for (int repeat = 0; repeat < 10; ++repeat) {
+        std::vector<int> sort_array(10000);  // Increased from 5000
+        std::iota(sort_array.begin(), sort_array.end(), 1);
+        std::shuffle(sort_array.begin(), sort_array.end(), g);
+        optimized_sort(sort_array);
+    }
     
-    // Section 4: Optimized mathematical calculations
+    // Section 4: Optimized mathematical calculations - increased iterations
     std::cout << "Section 4: Optimized mathematical calculations..." << std::endl;
-    double math_result = optimized_math_calculation(1000);
+    double math_result = optimized_math_calculation(5000);  // Increased from 1000
     std::cout << "Calculation result: " << math_result << std::endl;
     
-    // Section 5: Optimized copy operations (using references)
+    // Section 5: Optimized copy operations (using references) - increased workload
     std::cout << "Section 5: Optimized copy operations..." << std::endl;
-    std::vector<int> source_array(10000);
+    std::vector<int> source_array(100000);  // Increased from 10000
     std::iota(source_array.begin(), source_array.end(), 1);
-    for (int i = 0; i < 100; ++i) {
+    for (int i = 0; i < 1000; ++i) {  // Increased from 100
         const std::vector<int>& result = optimized_copy_operations(source_array);
         (void)result; // Avoid unused variable warning
     }

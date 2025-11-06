@@ -28,16 +28,34 @@ if [ $? -ne 0 ]; then
 fi
 
 echo "Running perf record on optimized version..."
-perf record -g -F 99 ./performance_test_optimized
+# Use higher frequency and ensure we capture samples
+perf record -g -F 1000 --call-graph dwarf ./performance_test_optimized
 
 echo "Generating perf report..."
-perf report > perf_report_optimized.txt
+perf report > perf_report_optimized.txt 2>&1
+
+# Check if we have samples
+if [ ! -f "perf.data" ] || [ ! -s "perf.data" ]; then
+    echo "⚠ Warning: perf.data is empty or missing!"
+    echo "The program may have run too fast. Try increasing workload or sampling frequency."
+    exit 1
+fi
 
 echo "Saving perf output for FlameGraph..."
-perf script > perf_script_optimized.out
+perf script > perf_script_optimized.out 2>&1
+
+# Check if script output has content
+if [ ! -s "perf_script_optimized.out" ]; then
+    echo "⚠ Warning: perf_script_optimized.out is empty!"
+    echo "No samples were captured. The program may need to run longer."
+    exit 1
+fi
+
+SAMPLE_COUNT=$(wc -l < perf_script_optimized.out 2>/dev/null || echo "0")
+echo "Captured $SAMPLE_COUNT samples"
 
 echo "✓ Analysis complete!"
 echo "Generated files:"
 echo "  - perf_report_optimized.txt: perf report"
-echo "  - perf_script_optimized.out: output for FlameGraph"
+echo "  - perf_script_optimized.out: output for FlameGraph ($SAMPLE_COUNT samples)"
 

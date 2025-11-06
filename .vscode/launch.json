@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/ali/Documents/Daaneshgah/Term5/OS/Practices/HW2/practical",
+      "program": "/Users/ali/Documents/Daaneshgah/Term5/OS/Practices/HW2/practical/build/Debug/outDebug"
+    }
+  ]
+}

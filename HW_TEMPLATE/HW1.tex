@@ -252,8 +252,7 @@ perf script > perf_script.out
 \\
 این اسکریپت برنامه را به کمک فلگ \lr{-O0 -g} کامپایل می‌کند و سپس با \lr{perf record} نمونه‌برداری انجام می‌دهد و سپس گزارش perf را تولید می‌کند و خروجی را برای \lr{FlameGraph} ذخیره می‌کند.
 \\
-نتایج تحلیل perf:
-RESULT\_TODO
+بعد از اجرا کردن آن خروجی در فایل‌های \lr{perf\_report.txt} و \lr{perf\_script.out} ثبت شده است.
 
 \subsection{FlameGraph}
 
@@ -261,19 +260,11 @@ RESULT\_TODO
 
 \begin{itemize}
     \item عرض هر مستطیل نشان‌دهنده زمان صرف شده در آن تابع است
-    \item ارتفاع نشان‌دهنده عمق call stack است
+    \item نشان‌دهنده عمق \lr{call stack} است
     \item رنگ‌ها برای تمایز بین توابع مختلف استفاده می‌شوند
 \end{itemize}
 
-نصب و استفاده:
-\begin{LTR}
-\begin{verbatim}
-git clone https://github.com/brendangregg/FlameGraph.git
-cd FlameGraph
-perf script | ./stackcollapse-perf.pl | ./flamegraph.pl > ../flamegraph.svg
-\end{verbatim}
-\end{LTR}
-یا با استفاده از اسکریپت \lr{generate\_flamegraph.sh}:
+به کمک اسکریپت \lr{generate\_flamegraph.sh} می‌توان FlameGraph را تولید کرد:
 \begin{LTR}
 \begin{verbatim}
 chmod +x generate_flamegraph.sh

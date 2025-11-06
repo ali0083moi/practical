@@ -1,0 +1,131 @@
+performance_tes    9318  1351.333645:   10101010 task-clock:ppp: 
+	    b283878f4580 __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)+0x3c (/home/parallels/Desktop/practical/performance_test)
+	    b283878f44a7 void std::__fill_a<int*, int>(int*, int*, int const&)+0x23 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f442c int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)+0x4c (/home/parallels/Desktop/practical/performance_test)
+	    b283878f435c int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)+0x3c (/home/parallels/Desktop/practical/performance_test)
+	    b283878f41e0 int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)+0x54 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f3e9c int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)+0x24 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f3ac8 int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)+0x20 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f3228 std::vector<int, std::allocator<int> >::_M_default_initialize(unsigned long)+0x34 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f2838 std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&)+0x44 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d2c main+0x1e4 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.343745:   10101010 task-clock:ppp: 
+	    b283878f258c std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)+0x70 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f18f8 inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x90 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.353846:   10101010 task-clock:ppp: 
+	    b283878f2f14 std::remove_reference<int&>::type&& std::move<int&>(int&)+0x8 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f254b std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)+0x2f (/home/parallels/Desktop/practical/performance_test)
+	    b283878f18f8 inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x90 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.363949:   10101010 task-clock:ppp: 
+	    b283878f18c0 inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x58 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.374047:   10101010 task-clock:ppp: 
+	    b283878f1910 inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0xa8 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.384148:   10101010 task-clock:ppp: 
+	    b283878f2508 std::vector<int, std::allocator<int> >::operator[](unsigned long)+0x14 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f18ab inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x43 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.394249:   10101010 task-clock:ppp: 
+	    b283878f18c8 inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x60 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.404350:   10101010 task-clock:ppp: 
+	    b283878f2508 std::vector<int, std::allocator<int> >::operator[](unsigned long)+0x14 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1893 inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x2b (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.414451:   10101010 task-clock:ppp: 
+	    b283878f2508 std::vector<int, std::allocator<int> >::operator[](unsigned long)+0x14 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f18d3 inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x6b (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.424552:   10101010 task-clock:ppp: 
+	    b283878f2508 std::vector<int, std::allocator<int> >::operator[](unsigned long)+0x14 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f18ab inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x43 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.434653:   10101010 task-clock:ppp: 
+	    b283878f18c4 inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x5c (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.444756:   10101010 task-clock:ppp: 
+	    b283878f2508 std::vector<int, std::allocator<int> >::operator[](unsigned long)+0x14 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f18ab inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x43 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.454854:   10101010 task-clock:ppp: 
+	    b283878f18c8 inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)+0x60 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1d90 main+0x248 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.464955:   10101010 task-clock:ppp: 
+	    e503f89a83a0 __cos+0x0 (/usr/lib/aarch64-linux-gnu/libm.so.6)
+	    b283878f19cb inefficient_math_calculation(int)+0x57 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1db8 main+0x270 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.475058:   10101010 task-clock:ppp: 
+	    e503f89a84c4 __cos+0x124 (/usr/lib/aarch64-linux-gnu/libm.so.6)
+	    b283878f19cc inefficient_math_calculation(int)+0x58 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1db8 main+0x270 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+
+performance_tes    9318  1351.485157:   10101010 task-clock:ppp: 
+	    e503f89a83a0 __cos+0x0 (/usr/lib/aarch64-linux-gnu/libm.so.6)
+	    b283878f19cb inefficient_math_calculation(int)+0x57 (/home/parallels/Desktop/practical/performance_test)
+	    b283878f1db8 main+0x270 (/home/parallels/Desktop/practical/performance_test)
+	    e503f84684c4 __libc_start_call_main+0x74 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    e503f8468598 __libc_start_main@@GLIBC_2.34+0x98 (/usr/lib/aarch64-linux-gnu/libc.so.6)
+	    b283878f16b0 _start+0x30 (/home/parallels/Desktop/practical/performance_test)
+

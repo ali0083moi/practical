@@ -1,0 +1,267 @@
+# To display the perf.data header info, please use --header/--header-only options.
+#
+#
+# Total Lost Samples: 0
+#
+# Samples: 16  of event 'task-clock:ppp'
+# Event count (approx.): 161616160
+#
+# Children      Self  Command          Shared Object     Symbol                                                                                                                                                                                
+# ........  ........  ...............  ................  ......................................................................................................................................................................................
+#
+   100.00%     0.00%  performance_tes  performance_test  [.] _start
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+               |--75.00%--inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+               |          |          
+               |          |--31.25%--std::vector<int, std::allocator<int> >::operator[](unsigned long)
+               |          |          
+               |           --12.50%--std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)
+               |                     |          
+               |                      --6.25%--std::remove_reference<int&>::type&& std::move<int&>(int&)
+               |          
+               |--18.75%--inefficient_math_calculation(int)
+               |          __cos
+               |          
+                --6.25%--std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&)
+                          std::vector<int, std::allocator<int> >::_M_default_initialize(unsigned long)
+                          int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)
+                          int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+                          int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+                          int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+                          int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+                          void std::__fill_a<int*, int>(int*, int*, int const&)
+                          __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+   100.00%     0.00%  performance_tes  libc.so.6         [.] __libc_start_main@@GLIBC_2.34
+            |
+            ---__libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               |          
+               |--75.00%--inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+               |          |          
+               |          |--31.25%--std::vector<int, std::allocator<int> >::operator[](unsigned long)
+               |          |          
+               |           --12.50%--std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)
+               |                     |          
+               |                      --6.25%--std::remove_reference<int&>::type&& std::move<int&>(int&)
+               |          
+               |--18.75%--inefficient_math_calculation(int)
+               |          __cos
+               |          
+                --6.25%--std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&)
+                          std::vector<int, std::allocator<int> >::_M_default_initialize(unsigned long)
+                          int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)
+                          int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+                          int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+                          int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+                          int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+                          void std::__fill_a<int*, int>(int*, int*, int const&)
+                          __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+   100.00%     0.00%  performance_tes  libc.so.6         [.] __libc_start_call_main
+            |
+            ---__libc_start_call_main
+               main
+               |          
+               |--75.00%--inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+               |          |          
+               |          |--31.25%--std::vector<int, std::allocator<int> >::operator[](unsigned long)
+               |          |          
+               |           --12.50%--std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)
+               |                     |          
+               |                      --6.25%--std::remove_reference<int&>::type&& std::move<int&>(int&)
+               |          
+               |--18.75%--inefficient_math_calculation(int)
+               |          __cos
+               |          
+                --6.25%--std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&)
+                          std::vector<int, std::allocator<int> >::_M_default_initialize(unsigned long)
+                          int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)
+                          int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+                          int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+                          int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+                          int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+                          void std::__fill_a<int*, int>(int*, int*, int const&)
+                          __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+   100.00%     0.00%  performance_tes  performance_test  [.] main
+            |
+            ---main
+               |          
+               |--75.00%--inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+               |          |          
+               |          |--31.25%--std::vector<int, std::allocator<int> >::operator[](unsigned long)
+               |          |          
+               |           --12.50%--std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)
+               |                     |          
+               |                      --6.25%--std::remove_reference<int&>::type&& std::move<int&>(int&)
+               |          
+               |--18.75%--inefficient_math_calculation(int)
+               |          __cos
+               |          
+                --6.25%--std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&)
+                          std::vector<int, std::allocator<int> >::_M_default_initialize(unsigned long)
+                          int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)
+                          int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+                          int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+                          int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+                          int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+                          void std::__fill_a<int*, int>(int*, int*, int const&)
+                          __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+    75.00%    31.25%  performance_tes  performance_test  [.] inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+            |          
+            |--43.75%--inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+            |          |          
+            |          |--31.25%--std::vector<int, std::allocator<int> >::operator[](unsigned long)
+            |          |          
+            |           --12.50%--std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)
+            |                     |          
+            |                      --6.25%--std::remove_reference<int&>::type&& std::move<int&>(int&)
+            |          
+             --31.25%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+
+    31.25%    31.25%  performance_tes  performance_test  [.] std::vector<int, std::allocator<int> >::operator[](unsigned long)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+               std::vector<int, std::allocator<int> >::operator[](unsigned long)
+
+    18.75%    18.75%  performance_tes  libm.so.6         [.] __cos
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               inefficient_math_calculation(int)
+               __cos
+
+    18.75%     0.00%  performance_tes  performance_test  [.] inefficient_math_calculation(int)
+            |
+            ---inefficient_math_calculation(int)
+               __cos
+
+    12.50%     6.25%  performance_tes  performance_test  [.] std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)
+            |          
+            |--6.25%--std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)
+            |          std::remove_reference<int&>::type&& std::move<int&>(int&)
+            |          
+             --6.25%--_start
+                       __libc_start_main@@GLIBC_2.34
+                       __libc_start_call_main
+                       main
+                       inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+                       std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)
+
+     6.25%     6.25%  performance_tes  performance_test  [.] __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&)
+               std::vector<int, std::allocator<int> >::_M_default_initialize(unsigned long)
+               int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)
+               int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+               int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+               void std::__fill_a<int*, int>(int*, int*, int const&)
+               __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+     6.25%     0.00%  performance_tes  performance_test  [.] std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&)
+            |
+            ---std::vector<int, std::allocator<int> >::vector(unsigned long, std::allocator<int> const&)
+               std::vector<int, std::allocator<int> >::_M_default_initialize(unsigned long)
+               int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)
+               int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+               int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+               void std::__fill_a<int*, int>(int*, int*, int const&)
+               __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+     6.25%     0.00%  performance_tes  performance_test  [.] std::vector<int, std::allocator<int> >::_M_default_initialize(unsigned long)
+            |
+            ---std::vector<int, std::allocator<int> >::_M_default_initialize(unsigned long)
+               int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)
+               int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+               int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+               void std::__fill_a<int*, int>(int*, int*, int const&)
+               __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+     6.25%     6.25%  performance_tes  performance_test  [.] std::remove_reference<int&>::type&& std::move<int&>(int&)
+            |
+            ---_start
+               __libc_start_main@@GLIBC_2.34
+               __libc_start_call_main
+               main
+               inefficient_bubble_sort(std::vector<int, std::allocator<int> >&)
+               std::enable_if<std::__and_<std::__not_<std::__is_tuple_like<int> >, std::is_move_constructible<int>, std::is_move_assignable<int> >::value, void>::type std::swap<int>(int&, int&)
+               std::remove_reference<int&>::type&& std::move<int&>(int&)
+
+     6.25%     0.00%  performance_tes  performance_test  [.] int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)
+            |
+            ---int* std::__uninitialized_default_n_a<int*, unsigned long, int>(int*, unsigned long, std::allocator<int>&)
+               int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+               int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+               void std::__fill_a<int*, int>(int*, int*, int const&)
+               __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+     6.25%     0.00%  performance_tes  performance_test  [.] int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+            |
+            ---int* std::__uninitialized_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+               int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+               void std::__fill_a<int*, int>(int*, int*, int const&)
+               __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+     6.25%     0.00%  performance_tes  performance_test  [.] int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+            |
+            ---int* std::__uninitialized_default_n_1<true>::__uninit_default_n<int*, unsigned long>(int*, unsigned long)
+               int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+               int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+               void std::__fill_a<int*, int>(int*, int*, int const&)
+               __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+     6.25%     0.00%  performance_tes  performance_test  [.] int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+            |
+            ---int* std::fill_n<int*, unsigned long, int>(int*, unsigned long, int const&)
+               int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+               void std::__fill_a<int*, int>(int*, int*, int const&)
+               __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+     6.25%     0.00%  performance_tes  performance_test  [.] int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+            |
+            ---int* std::__fill_n_a<int*, unsigned long, int>(int*, unsigned long, int const&, std::random_access_iterator_tag)
+               void std::__fill_a<int*, int>(int*, int*, int const&)
+               __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+     6.25%     0.00%  performance_tes  performance_test  [.] void std::__fill_a<int*, int>(int*, int*, int const&)
+            |
+            ---void std::__fill_a<int*, int>(int*, int*, int const&)
+               __gnu_cxx::__enable_if<std::__is_scalar<int>::__value, void>::__type std::__fill_a1<int*, int>(int*, int*, int const&)
+
+
+
+#
+# (Cannot load tips.txt file, please install perf!)
+#

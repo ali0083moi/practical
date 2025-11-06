@@ -47,11 +47,28 @@ htop
 
 ## تمرین ۲: تحلیل عملکرد با perf
 
+### تنظیمات اولیه (فقط یک بار)
+
+قبل از استفاده از perf، باید تنظیمات امنیتی سیستم را تغییر دهید:
+
+```bash
+# تنظیم موقت (تا ری‌استارت)
+sudo sysctl -w kernel.perf_event_paranoid=-1
+
+# تنظیم دائمی (اضافه کردن به /etc/sysctl.conf)
+echo "kernel.perf_event_paranoid = -1" | sudo tee -a /etc/sysctl.conf
+sudo sysctl -p
+```
+
+**توضیح**: `perf_event_paranoid` کنترل می‌کند که چه کاربرانی می‌توانند از perf استفاده کنند. مقدار `-1` به همه کاربران اجازه می‌دهد.
+
 ### ۱. اجرای تحلیل اولیه
 ```bash
 chmod +x run_perf_analysis.sh
 ./run_perf_analysis.sh
 ```
+
+**نکته**: اگر خطای دسترسی دریافت کردید، اسکریپت سعی می‌کند خودش تنظیمات را تغییر دهد، اما ممکن است نیاز به sudo داشته باشید.
 
 ### ۲. تولید FlameGraph
 ```bash
